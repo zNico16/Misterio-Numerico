@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Mistério Numérico</title>
+</head>
+<body>
+    <div class="lobby-content" id="lobbyContent">
+        <center>
+        <h1>Bem-vindo ao Mistério Numérico</h1>
+        <p>
+            Você está prestes a jogar o Mistério Numérico. Este é um jogo simples de adivinhação,
+            onde você tenta</br> adivinhar um número aleatório entre 1 e 100 com apenas 10 tentativas. Receba dicas</br> sobre se o número é
+            maior ou menor com base nos seus palpites.
+        </p>
+        <button id="startGameBtn" onclick="iniciarJogo()">Jogar Mistério Numérico</button>
+        </center>
+    </div>
+    <div id="jogoContent" class="content"  style="display: none;">
+        <ul id="historicoNumeros">HISTÓRICO</ul>
+        <center>
+        <div id="mensagemPerda">Você atingiu o limite de tentativas. Tente novamente!</div>            
+        <div id="parabensTexto"><h1>Parabéns, você acertou o número com <div id="tentativasTexto"></div></h1></div>
+        <div id="texto"><h1>Descobrir o número de 1 a 100</h1></div>
+        <input type="number" id="bet"  placeholder="Digite um número" onkeydown="verificarEnter(event)" min="1" max="999">
+        <button id="enviarBtn" onclick="acionarBotao()">Enviar</button>
+        <button id="reiniciarBtn" onclick="reiniciarJogo()">Reiniciar</button>
+        </center>
+    </div>
+    <audio id="somCerto">
+        <source src="áudio/resposta_correta.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+      </audio>
+    <audio id="somErro">
+        <source src="áudio/resposta_errada.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+    <button id="voltarLobbyBtn"  class="voltar-lobby-btn" onclick="voltarParaLobby()">⇦</button>
+</body>
+<script src="scriptA.js"></script>
+</html>
